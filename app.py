@@ -21,7 +21,7 @@ def get_insights():
     return jsonify({"data": report}) 
 
 
-@app.route('/chat', methods=['GET'])
+@app.route('/chat', methods=['POST'])
 def talk():
     #retrieve query from request
     data = request.get_json()

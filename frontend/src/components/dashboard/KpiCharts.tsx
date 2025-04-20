@@ -1,44 +1,45 @@
-
-import { 
-  BarChart, 
-  Bar, 
-  XAxis, 
-  YAxis, 
-  CartesianGrid, 
-  Tooltip, 
-  Legend, 
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
   ResponsiveContainer,
   LineChart,
   Line,
   PieChart,
   Pie,
-  Cell
-} from 'recharts';
-import { pieChartData, lineChartData, barChartData } from '@/data/mockData';
+  Cell,
+} from "recharts";
+import { pieChartData, lineChartData, barChartData } from "@/data/mockData";
 
-const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884D8'];
+const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "#8884D8"];
 
 export function KpiCharts() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
       <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
-        <h3 className="text-md font-medium text-gray-700 mb-4">Project Progress by Phase</h3>
+        <h3 className="text-md font-medium text-gray-700 mb-4">
+          Project Progress by Phase
+        </h3>
         <ResponsiveContainer width="100%" height={300}>
           <BarChart data={barChartData}>
             <CartesianGrid strokeDasharray="3 3" vertical={false} />
             <XAxis dataKey="name" />
             <YAxis />
-            <Tooltip 
-              contentStyle={{ 
-                backgroundColor: 'white', 
-                borderRadius: '0.5rem',
-                border: '1px solid #e2e8f0' 
+            <Tooltip
+              contentStyle={{
+                backgroundColor: "white",
+                borderRadius: "0.5rem",
+                border: "1px solid #e2e8f0",
               }}
             />
-            <Bar 
-              dataKey="value" 
-              fill="#1eaedb" 
-              radius={[4, 4, 0, 0]} 
+            <Bar
+              dataKey="value"
+              fill="#1eaedb"
+              radius={[4, 4, 0, 0]}
               barSize={40}
             />
           </BarChart>
@@ -46,24 +47,26 @@ export function KpiCharts() {
       </div>
 
       <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
-        <h3 className="text-md font-medium text-gray-700 mb-4">Completion Trend</h3>
+        <h3 className="text-md font-medium text-gray-700 mb-4">
+          Completion Trend
+        </h3>
         <ResponsiveContainer width="100%" height={300}>
           <LineChart data={lineChartData}>
             <CartesianGrid strokeDasharray="3 3" vertical={false} />
             <XAxis dataKey="date" />
             <YAxis />
-            <Tooltip 
-              contentStyle={{ 
-                backgroundColor: 'white', 
-                borderRadius: '0.5rem',
-                border: '1px solid #e2e8f0' 
+            <Tooltip
+              contentStyle={{
+                backgroundColor: "white",
+                borderRadius: "0.5rem",
+                border: "1px solid #e2e8f0",
               }}
             />
-            <Line 
-              type="monotone" 
-              dataKey="value" 
-              stroke="#1eaedb" 
-              strokeWidth={3} 
+            <Line
+              type="monotone"
+              dataKey="value"
+              stroke="#1eaedb"
+              strokeWidth={3}
               dot={{ r: 4 }}
               activeDot={{ r: 6 }}
             />
@@ -71,7 +74,7 @@ export function KpiCharts() {
         </ResponsiveContainer>
       </div>
 
-      <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100 md:col-span-2">
+      {/* <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100 md:col-span-2">
         <h3 className="text-md font-medium text-gray-700 mb-4">Resource Allocation</h3>
         <div className="flex justify-center">
           <ResponsiveContainer width="80%" height={300}>
@@ -101,7 +104,7 @@ export function KpiCharts() {
             </PieChart>
           </ResponsiveContainer>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

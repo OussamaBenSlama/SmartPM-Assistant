@@ -1,9 +1,7 @@
 import DashboardLayout from "@/components/layout/DashboardLayout";
-import { KpiOverview } from "@/components/dashboard/KpiOverview";
-import { RiskAlerts } from "@/components/dashboard/RiskAlerts";
 import { Recommendations } from "@/components/dashboard/Recommendations";
 
-export default function Dashboard() {
+export default function RecommendationsPage() {
   return (
     <DashboardLayout>
       <div className="grid grid-cols-1 gap-8">
@@ -16,16 +14,7 @@ export default function Dashboard() {
           </p>
         </div>
 
-        <KpiOverview />
-
-        {/* <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <div className="lg:col-span-2">
-            <RiskAlerts />
-          </div>
-          <div className="lg:col-span-2">
-            <Recommendations />
-          </div>
-        </div> */}
+        <Recommendations />
       </div>
     </DashboardLayout>
   );
